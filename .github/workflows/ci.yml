@@ -41,7 +41,7 @@ jobs:
         working-directory: ./backend
         run: |
           npm install  
-          node seedTaskData.js
+          node seedTasksData.js
 
       - name: running backend test
         working-directory: ./backend
