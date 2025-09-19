@@ -15,8 +15,10 @@ jobs:
       JWT_SECRET: ${{secrets.JWT_SECRET}}
 
     services:
-      image: mongo
-      ports: ['27017:27017']   
+      mongo:                     
+        image: mongo:6.0         
+        ports:
+          - 27017:27017  
 
     steps:
       - name: clone repo
