@@ -30,23 +30,27 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>To-Do List with Devops DB </h1>
-      <input
-        value={text}
-        onChange={e => setText(e.target.value)}
-        placeholder="New task"
-      />
-      <button onClick={addTask}>Add</button>
-      <ul>
-        {tasks.map(task => (
-          <li key={task._id}>
-            {task.text}
-            <button onClick={() => deleteTask(task._id)}>❌</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div className="container">
+  <h1>📝 To-Do List (DevOps DB)</h1>
+  <div>
+    <input
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      placeholder="Enter a new task..."
+    />
+    <button onClick={addTask}>Add Task</button>
+  </div>
+
+  <ul>
+    {tasks.map((task) => (
+      <li key={task._id}>
+        {task.text}
+        <button onClick={() => deleteTask(task._id)}>❌</button>
+      </li>
+    ))}
+  </ul>
+</div>
+
   );
 }
 
